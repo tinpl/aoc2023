@@ -1,5 +1,4 @@
 ﻿using aoc.Days;
-using FluentAssertions;
 
 namespace aoc.Tests
 {
