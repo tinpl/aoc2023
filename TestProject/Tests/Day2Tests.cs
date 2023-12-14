@@ -1,5 +1,4 @@
 ﻿using aoc.Days;
-using FluentAssertions;
 
 namespace aoc.Tests
 {
@@ -11,11 +10,13 @@ namespace aoc.Tests
     [InlineData("Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red", false)]
     [InlineData("Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red", false)]
     [InlineData("Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green", true)]
-    public async Task Part1(string line, bool expected)
+    public Task Part1(string line, bool expected)
     {
       var passConditions = new Day2.MaxItemsPassConditions(12,13,14);
       var gameData = Day2.ProcessLine(line);
       passConditions.CheckData(gameData).Should().Be(expected);
+
+      return Task.CompletedTask;
     }
 
     [Theory]
@@ -24,10 +25,12 @@ namespace aoc.Tests
     [InlineData("Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red", 1560)]
     [InlineData("Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red", 630)]
     [InlineData("Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green", 36)]
-    public async Task Part2(string line, int expected)
+    public Task Part2(string line, int expected)
     {
       var gameData = Day2.ProcessLine(line);
       Day2.SetsPower(gameData).Should().Be(expected);
+
+      return Task.CompletedTask;
     }
   }
 }

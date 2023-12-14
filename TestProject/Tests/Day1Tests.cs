@@ -1,6 +1,4 @@
 ﻿using aoc.Days;
-using Xunit;
-using FluentAssertions;
 
 namespace aoc.Tests
 {
@@ -18,9 +16,10 @@ namespace aoc.Tests
     [InlineData("4nineeightseven2", 42)]
     [InlineData("zoneight234", 14)]
     [InlineData("7pqrstsixteen", 76)]
-    async Task LinesShouldMatchNumbers(string line, int expected)
+    Task LinesShouldMatchNumbers(string line, int expected)
     {
       Day1.ProcessLine(line).Should().Be(expected);
+      return Task.CompletedTask;
     }
   }
 }
