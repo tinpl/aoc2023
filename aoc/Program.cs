@@ -13,8 +13,9 @@ namespace aoc
       // var day3 = await new Day3().Run();
       // var day4 = await new Day4().Run();
       // var day5 = await new Day5().Run();
+      // var day6 = await new Day6().Run();
 
-      // Console.WriteLine($"Results: {day5.Item1}, {day5.Item2}");
+      // Console.WriteLine($"Results: {day6.Item1}, {day6.Item2}");
 
       return 0;
     }
